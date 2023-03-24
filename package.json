@@ -8,7 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "preconstruct build",
+	"prepare": "npm run build",
+	"build": "preconstruct build",
     "format": "prettier --write --no-semi --single-quote --trailing-comma es5 \"{src,test,demo/src}/**/*.js\"",
     "lint": "eslint --max-warnings=0 --ext .js src test demo",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development webpack-dev-server --config demo/webpack.config.js",
