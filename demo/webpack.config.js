@@ -11,7 +11,7 @@ const inDev = NODE_ENV === 'development' || NODE_ENV === 'test'
 
 module.exports = {
   mode: inDev ? 'development' : 'production',
-  devtool: inDev ? 'dev-tool-cheap-source-map' : 'source-map',
+  devtool: inDev ? 'eval-cheap-source-map' : 'source-map',
   entry: [
     'core-js/stable',
     'regenerator-runtime/runtime',
@@ -19,14 +19,14 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: inDev ? '[name].[chunkhash].js' : '[chunkhash].js',
+    filename: inDev ? '[name].[contenthash].js' : '[contenthash].js',
 
-    chunkFilename: inDev ? '[name].[chunkhash].js' : '[chunkhash].js',
+    chunkFilename: inDev ? '[name].[contenthash].js' : '[contenthash].js',
   },
 
   plugins: [
     new CaseSensitivePathsPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
+    new webpack.ids.HashedModuleIdsPlugin(),
     new HTMLWebpackPlugin({
       alwaysWriteToDisk: true,
       minify: true,
@@ -36,7 +36,7 @@ module.exports = {
     new HTMLWebpackHarddiskPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.css'],
+    extensions: ['.js', '.css', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -44,6 +44,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader',
       },
       {
         test: /\.css$/,
@@ -58,10 +63,5 @@ module.exports = {
         ],
       },
     ],
-  },
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
   },
 }

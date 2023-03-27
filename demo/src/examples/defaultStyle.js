@@ -11,11 +11,9 @@ export default {
       minHeight: 63,
     },
     highlighter: {
-      padding: 9,
       border: '1px solid transparent',
     },
     input: {
-      padding: 9,
       border: '1px solid silver',
     },
   },

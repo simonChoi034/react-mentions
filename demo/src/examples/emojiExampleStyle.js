@@ -6,14 +6,12 @@ export default {
   },
 
   highlighter: {
-    padding: 9,
     border: '1px solid transparent',
   },
 
   input: {
     fontSize: 16,
     lineHeight: 1.2,
-    padding: 9,
     border: '1px solid silver',
   },
 
