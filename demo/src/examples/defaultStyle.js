@@ -35,7 +35,6 @@ export default {
   suggestions: {
     list: {
       backgroundColor: 'white',
-      border: '1px solid rgba(0,0,0,0.15)',
       fontSize: 14,
     },
     item: {
