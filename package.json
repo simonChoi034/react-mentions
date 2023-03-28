@@ -4,8 +4,10 @@
   "description": "React mentions input",
   "main": "dist/react-mentions.cjs.js",
   "module": "dist/react-mentions.esm.js",
+  "typings": "@types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "@types/index.d.ts"
   ],
   "scripts": {
     "prepare": "preconstruct build",
@@ -45,11 +47,13 @@
     "@babel/core": "^7.21.3",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/plugin-transform-runtime": "^7.21.0",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-flow": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.0",
     "@changesets/cli": "^2.26.1",
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -86,6 +90,7 @@
     "regenerator-runtime": "^0.13.11",
     "style-loader": "^0.23.1",
     "substyle-jss": "^4.1.2",
+    "typescipt": "^1.0.0",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
